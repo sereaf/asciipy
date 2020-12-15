@@ -7,7 +7,7 @@ from to_ascii.image import ImageForAscii, print_terminal
 from progress import Progress
 from to_ascii.utils import *
 
-class VideoForAscii:
+class AsciiVideo:
 	""" 
 		Class for the video to asciify and call the output action
 	"""

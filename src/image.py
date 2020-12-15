@@ -8,7 +8,7 @@ from to_ascii.font import InputFont
 from to_ascii.utils import *
 from to_ascii.image_process import *
 
-class ImageForAscii:
+class AsciiImage:
 	def __init__(self, imgIn):
 		self.pathIn = imgIn
 		self.image = None

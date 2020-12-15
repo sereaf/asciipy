@@ -1,6 +1,6 @@
 import argparse
-from to_ascii.image import ImageForAscii
-from to_ascii.video import VideoForAscii
+from image import AsciiImage
+from video import AsciiVideo
 from to_ascii.utils import *
 import sys
 
