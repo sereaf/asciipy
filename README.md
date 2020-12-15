@@ -65,7 +65,7 @@ asciipy -f C:\image_to_ascii\your_image.png
 | -ch / --chars              | Characterset                                                    | `str`                                    |
 | -au / --audio              | With audio                                                      | `bool`                                   |
 | -fo / --font               | Font file                                                       | `str`                                    |
-| -as / --save-as            | Save with give extension                                        | `str`                                    |
+| -as / --save-as            | Save with given extension                                        | `str`                                    |
 | -s / --scale               | Scale compared to deafult img/video size                        | `float`                                  |
 | -df / --density-flip       | Reverse the given charachterset (dark, light chars flip)        | `bool`                                   |
 | -cs / --character-space    | Character spacing on the image                                  | `'sm'`, `'bg'`, `'avg'`                  |
