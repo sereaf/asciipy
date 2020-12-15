@@ -2,7 +2,7 @@
 
 <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_logo.jpg" alt="Asciipy Logo" width="500" height="500">
 
-_This package lets you convert images and videos to ascii art and you can print them to the terminal or save them in image / video formats or in .txt file._
+_Convert images and videos to ascii art and you can print them to the terminal or save them in image / video formats or in .txt file._
 
 ---
 
@@ -60,7 +60,7 @@ asciipy -f C:\image_to_ascii\your_image.png
 | -f / --file                | Input file path (or already loaded image)                       | `str`                                    |
 | -ac / --action             | Return, save, show, play                                        | `'return'`, `'save'`, `'show'`, `'play'` |
 | -o / --output              | Out put file path                                               | `'terminal'`, `'save'`, `'text'`         |
-| -oa / --output-as          | Output to - terminal, save, text                                | `str`                                    |
+| -oa / --output-as          | Output to - terminal, save, text  (only cli)                    | `str`                                    |
 | -op / --option             | Option to use when converting                                   | `str`                                    |
 | -ch / --chars              | Characterset                                                    | `str`                                    |
 | -au / --audio              | With audio                                                      | `bool`                                   |
