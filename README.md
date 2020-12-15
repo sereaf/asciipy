@@ -73,7 +73,7 @@ asciipy -f C:\image_to_ascii\your_image.png
 | -ts / --terminal-size      | Terminal size - width, height ex. 50, 30                        | `int` (width, height)                    |
 | -rt / --ratio-to           | Terminal printing ratio. Keep image ratio to width or to height | `'width'`, `'height'`, `'pass'`          |
 | -tspc / --terminal-spacing | Character to divide the ascii characters in the terminal        | `str`                                    |
-| -tclr / --terminal-clear   | Clear terminal after printing image there                       | `bool`                                   |
+| -clr / --clear              | Clear terminal/.txt after writing image there                  | `bool`                                   |
 
 **In code you can pass these as keyword arguments, with always the same name as the longer version of the cli flag**
 
