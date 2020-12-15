@@ -1,17 +1,16 @@
 # Asciipy
 
-<!--![Asciipy Logo](https://github.com/sereaf/asciipy/blob/master/images/asciipy_logo.jpg =250x250)-->
 <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_logo.jpg" alt="Asciipy Logo" width="500" height="500">
 
 _This package lets you convert images and videos to ascii art and you can print them to the terminal or save them in image / video formats or in .txt file._
 
 ---
 
-## Install
+<!--## Install
 
-```
+```bash
 pip install asciipy
-```
+```-->
 
 <!-- [see here on pypi.org]() -->
 
@@ -95,7 +94,7 @@ img.ascii_video(output_as='save', charcter_space='avg',
 font='C:\Windows\Fonts\Segoepr.ttf', font_scale=0.5)
 ```
 <!--![Output Image1](https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png)-->
-|  <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png" alt="First Output" width="480" height="270"> | ![Output Image2]() |
+|  <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png" alt="First Output" width="480" height="270"> | <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png" alt="Second Output" width="480" height="270"> |
 | ------------------ | ------------------ |
 
 ![Output Video]()
