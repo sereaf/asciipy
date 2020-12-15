@@ -79,16 +79,16 @@ asciipy -f C:\image_to_ascii\your_image.png
 
 ## Examples
 
-```
+```bash
 asciipy -f test.png -oa terminal -df True -op bandw
 ```
 
-```
+```python
 img = AsciiImage('test.jpg')
 img.ascii_txt(density_flip=False)
 ```
 
-```
+```python
 img = AsciiVideo('test.mp4')
 img.ascii_video(output_as='save', charcter_space='avg',
 font='C:\Windows\Fonts\Segoepr.ttf', font_scale=0.5)
