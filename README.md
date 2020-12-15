@@ -7,7 +7,7 @@ _This package lets you convert images and videos to ascii art and you can print 
 
 ---
 
-##Install
+## Install
 
 ```
 pip install asciipy
@@ -15,14 +15,14 @@ pip install asciipy
 
 <!-- [see here on pypi.org]() -->
 
-Requirements
+## Requirements
 
 -   1
 -   2
 -   3
 
-Usage
-Code
+## Usage
+#### Code
 
 ```python
 from asciipy import AsciiVideo, AsciiImage
@@ -47,13 +47,13 @@ video.ascii_txt() # put it into a txt file
 # see all arguments bellow
 ```
 
-####Cli
+#### Cli
 
 ```bash
 asciipy -f C:\image_to_ascii\your_image.png
 ```
 
-##Arguments
+## Arguments
 
 **Hint: type `-h` or `--help` into the cli to get all descriptions**
 
@@ -79,7 +79,7 @@ asciipy -f C:\image_to_ascii\your_image.png
 
 **In code you can pass these as keyword arguments, with always the same name as the longer version of the cli flag**
 
-##Examples
+## Examples
 
 ```
 asciipy -f test.png -oa terminal -df True
@@ -101,9 +101,9 @@ font='C:\Windows\Fonts\Segoepr.ttf', font_scale=0.5)
 
 ![Output Video]()
 
-####More...
+#### More...
 
 ![Output Images]()
 
-##Support
+## Support
 ######...
