@@ -80,11 +80,11 @@ asciipy -f C:\image_to_ascii\your_image.png
 ## Examples
 
 ```bash
-asciipy -f test.png -oa terminal -df True -op bandw
+asciipy -f py_logo.png -oa terminal -df True -op bandw
 ```
 
 ```python
-img = AsciiImage('test.jpg')
+img = AsciiImage('py_logo.jpg')
 img.ascii_txt(density_flip=False)
 ```
 
