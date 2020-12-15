@@ -17,9 +17,8 @@ pip install asciipy
 
 ## Requirements
 
--   1
--   2
--   3
+-   opencv-python
+-   pillow
 
 ## Usage
 #### Code
@@ -82,7 +81,7 @@ asciipy -f C:\image_to_ascii\your_image.png
 ## Examples
 
 ```
-asciipy -f test.png -oa terminal -df True
+asciipy -f test.png -oa terminal -df True -op bandw
 ```
 
 ```
