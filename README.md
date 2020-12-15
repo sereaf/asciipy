@@ -54,7 +54,7 @@ asciipy -f C:\image_to_ascii\your_image.png
 
 ## Arguments
 
-** Type `-h` or `--help` into the cli to get all descriptions**
+**Type `-h` or `--help` into the cli to get all descriptions**
 
 | Cli                        | Desc.                                                           | Options                                  |
 | -------------------------- | --------------------------------------------------------------- | ---------------------------------------- |
