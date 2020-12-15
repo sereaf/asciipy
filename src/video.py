@@ -3,7 +3,7 @@ import cv2
 import os
 import sys
 import time
-from to_ascii.image import ImageForAscii, print_terminal
+from image import AsciiImage,
 from progress import Progress
 from to_ascii.utils import *
 
