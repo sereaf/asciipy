@@ -60,7 +60,7 @@ asciipy -f C:\image_to_ascii\your_image.png
 | -f / --file                | Input file path (or already loaded image)                       | `str`                                    |
 | -ac / --action             | Return, save, show, play                                        | `'return'`, `'save'`, `'show'`, `'play'` |
 | -o / --output              | Out put file path                                               | `'terminal'`, `'save'`, `'text'`         |
-| -oa / --output-as          | Output to - terminal, save, text                                | `str`                                    |
+| -oa / --output-as          | Output to - terminal, save, text  (only cli)                    | `str`                                    |
 | -op / --option             | Option to use when converting                                   | `str`                                    |
 | -ch / --chars              | Characterset                                                    | `str`                                    |
 | -au / --audio              | With audio                                                      | `bool`                                   |
