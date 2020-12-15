@@ -21,6 +21,7 @@ pip install asciipy
 -   `numpy`
 
 ## Usage
+
 #### Code
 
 ```python
@@ -60,12 +61,12 @@ asciipy -f C:\image_to_ascii\your_image.png
 | -f / --file                | Input file path (or already loaded image)                       | `str`                                    |
 | -ac / --action             | Return, save, show, play                                        | `'return'`, `'save'`, `'show'`, `'play'` |
 | -o / --output              | Out put file path                                               | `'terminal'`, `'save'`, `'text'`         |
-| -oa / --output-as          | Output to - terminal, save, text  (only cli)                    | `str`                                    |
+| -oa / --output-as          | Output to - terminal, save, text (only cli)                     | `str`                                    |
 | -op / --option             | Option to use when converting                                   | `str`                                    |
 | -ch / --chars              | Characterset                                                    | `str`                                    |
 | -au / --audio              | With audio                                                      | `bool`                                   |
 | -fo / --font               | Font file                                                       | `str`                                    |
-| -as / --save-as            | Save with given extension                                        | `str`                                    |
+| -as / --save-as            | Save with given extension                                       | `str`                                    |
 | -s / --scale               | Scale compared to deafult img/video size                        | `float`                                  |
 | -df / --density-flip       | Reverse the given charachterset (dark, light chars flip)        | `bool`                                   |
 | -cs / --character-space    | Character spacing on the image                                  | `'sm'`, `'bg'`, `'avg'`                  |
@@ -73,7 +74,7 @@ asciipy -f C:\image_to_ascii\your_image.png
 | -ts / --terminal-size      | Terminal size - width, height ex. 50, 30                        | `int` (width, height)                    |
 | -rt / --ratio-to           | Terminal printing ratio. Keep image ratio to width or to height | `'width'`, `'height'`, `'pass'`          |
 | -tspc / --terminal-spacing | Character to divide the ascii characters in the terminal        | `str`                                    |
-| -clr / --clear              | Clear terminal/.txt after writing image there                  | `bool`                                   |
+| -clr / --clear             | Clear terminal/.txt after writing image there                   | `bool`                                   |
 
 **In code you can pass these as keyword arguments, with always the same name as the longer version of the cli flag**
 
@@ -93,16 +94,14 @@ img = AsciiVideo('test.mp4')
 img.ascii_video(output_as='save', charcter_space='avg',
 font='C:\Windows\Fonts\Segoepr.ttf', font_scale=0.5)
 ```
+
 <!--![Output Image1](https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png)-->
-|  <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png" alt="First Output" width="480" height="270"> | <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_txt.png" alt="Second Output" width="480" height="270"> |
-| ------------------ | ------------------ |
+
+| <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png" alt="First Output" width="480" height="270"> | <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_txt.png" alt="Second Output" width="480" height="270"> |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+
 <img src="https://github.com/sereaf/asciipy/blob/master/images/python_logo_img_bandw.jpg" alt="Img Example" width="960" height="540">
 
-![Output Video]()
+<!--## Support
 
-#### More...
-
-![Output Images]()
-
-## Support
-######...
+######...-->
