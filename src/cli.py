@@ -42,7 +42,7 @@ def main():
 	parser.add_argument('-ts', '--terminal-size', nargs='+', type=int, help='DEFAULT:current terminal size or (53, 30)  DESC: ', default=None, action='store')
 	parser.add_argument('-rt', '--ratio-to', type=str.lower, choices=['pass', 'width', 'height'], help='DEFAULT: width DESC: auto scale the width to the height of the input image in terminal or vice versa or pass - (no auto scaling)', default='width', action='store')
 	parser.add_argument('-tspc', '--terminal-spacing', type=str, help='DEFAULT: None - () DESC: character dividing the characters printed to the terminal', default=None, action='store')
-	parser.add_argument('-tclr', '--terminal-clear', type=bool, help='DEFAULT: False - () DESC: clear the terminal after image printed', default=False, action='store')
+	parser.add_argument('-clr', '--clear', type=bool, help='DEFAULT: False - () DESC: clear the terminal after image printed', default=False, action='store')
 	""" -h or --help for help """
 
 	a = p.get_args()
@@ -62,9 +62,9 @@ def main():
 		if output_as == 'save':
 			i.ascii_img(action=a.action, output=a.output, option=a.option, font=a.font, save_as=a.save_as, scale=a.scale, density_flip=a.density_flip, character_space=a.character_space, chars=a.chars, font_scale=a.font_scale)
 		elif output_as == 'terminal':
-			i.ascii_terminal(option=a.option, action=a.action, scale=a.scale, terminal_size=a.terminal_size, density_flip=a.density_flip, chars=a.chars, ratio_to=a.ratio_to, terminal_spacing=a.terminal_spacing, clear=a.terminal_clear)
+			i.ascii_terminal(option=a.option, action=a.action, scale=a.scale, terminal_size=a.terminal_size, density_flip=a.density_flip, chars=a.chars, ratio_to=a.ratio_to, terminal_spacing=a.terminal_spacing, clear=a.clear)
 		elif output_as == 'txt':
-			i.ascii_txt(output=a.output, option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, chars=a.chars, ratio_to=a.ratio_to, clear=a.terminal_clear)
+			i.ascii_txt(output=a.output, option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, chars=a.chars, ratio_to=a.ratio_to, clear=a.clear)
 
 if __name__ == '__main__':
 	main()
