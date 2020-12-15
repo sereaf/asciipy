@@ -101,6 +101,7 @@ font='C:\Windows\Fonts\Segoepr.ttf', font_scale=0.5)
 | --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 
 <img src="https://github.com/sereaf/asciipy/blob/master/images/python_logo_img_bandw.jpg" alt="Img Example" width="960" height="540">
+<img src="https://github.com/sereaf/asciipy/blob/master/images/python_logo_img.jpg" alt="Img Example" width="960" height="540">
 
 <!--## Support
 
