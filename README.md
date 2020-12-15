@@ -16,8 +16,9 @@ pip install asciipy
 
 ## Requirements
 
--   opencv-python
--   pillow
+-   `opencv-python`
+-   `pillow`
+-   `numpy`
 
 ## Usage
 #### Code
@@ -37,7 +38,6 @@ video_path = 'C:\video_to_ascii\your_video.mp4'
 video = AsciiVideo(video_path)
 video.ascii_video() # save or return an ascii video
 video.ascii_terminal() #print an ascii video to the terminal
-video.ascii_txt() # put it into a txt file
 
 # input image can already be loaded
 # by opencv or pillow, just pass that as an argument
