@@ -15,14 +15,14 @@ pip install asciipy
 
 <!-- [see here on pypi.org]() -->
 
-##Requirements
+Requirements
 
 -   1
 -   2
 -   3
 
-##Usage
-####Code
+Usage
+Code
 
 ```python
 from asciipy import AsciiVideo, AsciiImage
