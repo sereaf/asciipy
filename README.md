@@ -1,6 +1,6 @@
 # Asciipy
 
-![Asciipy Logo](https://github.com/sereaf/asciipy/blob/master/images/asciipy_logo.jpg)
+![Asciipy Logo](https://github.com/sereaf/asciipy/blob/master/images/asciipy_logo.jpg =250x250)
 
 _This package lets you convert images and videos to ascii art and you can print them to the terminal or save them in image / video formats or in .txt file._
 
