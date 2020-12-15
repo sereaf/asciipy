@@ -96,6 +96,7 @@ font='C:\Windows\Fonts\Segoepr.ttf', font_scale=0.5)
 <!--![Output Image1](https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png)-->
 |  <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png" alt="First Output" width="480" height="270"> | <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_txt.png" alt="Second Output" width="480" height="270"> |
 | ------------------ | ------------------ |
+<img src="https://github.com/sereaf/asciipy/blob/master/images/python_logo_img_bandw.jpg" alt="Img Example" width="500" height="500">
 
 ![Output Video]()
 
