@@ -4,15 +4,17 @@ import cv2
 import sys
 from PIL import ImageOps, Image
 import numpy as np
-from to_ascii.font import InputFont
-from to_ascii.utils import *
-from to_ascii.image_process import *
+from editor.font import InputFont
+from editor.utils import *
+from editor.image_process import *
 
 class AsciiImage:
 	def __init__(self, imgIn):
 		self.pathIn = imgIn
 		self.image = None
-		#self.load()
+		self.name = None
+		self.extension = None
+		
 
 	def load(self, pillow=False):
 		"""
@@ -23,6 +25,7 @@ class AsciiImage:
 				self.image = Image.open(self.pathIn)
 			else:
 				self.image = cv2.imread(self.pathIn)
+			self.name, self.extension = os.path.splitext(os.path.basename(self.pathIn))
 		elif type(self.pathIn) is list or type(self.pathIn).__module__ == np.__name__:
 			if pillow:
 				self.image = cv2_to_pil(self.pathIn)
@@ -170,17 +173,51 @@ class AsciiImage:
 		else:
 			pass
 
+	@timeit
+	def ascii_txt(self, output='', option='bandw', action='save', scale='fit', density_flip=False, chars=None, ratio_to='width', character_space='', clear=False):
+		self.load()
+		size = self.get_shape()
 
+		chars = get_charset(chars, option)
 
-	""" rgb = increase_saturation(r, g, b)
-		print('\033[38;5;%s;%s;%sm a %s' % (r, g, b, '\033[0m'))
-		ansi = f'\033[38;5;{r};{g};{b}m{char}\033[0m'	
-		print("\033[A{}\033[A".format(''.join(['']*(terminal_width * terminal_height))))
-		sys.stdout.write("\033[F")
-		print("\033[A{}\033[A".format(''.join([' ']*(terminal_width * terminal_height))))
-		with open('txt.txt', 'a+') as a:
-			for i in range(len(_all)):
-				if i % terminal_width == 0:
-					a.write(_all[i] + '\r\n')
+		scale = scale_to_float(scale)
+
+		new_width = size[0]
+		new_height = size[1]
+
+		if scale != 'fit' and scale != None:
+			new_width = int(scale * size[0])
+			new_height = int(scale * size[1])
+			new_size = new_width, new_height
+		
+		new_size = new_width, new_height
+		img, width, height = self.resize(new_size)
+		charArray, charLength, interval = getChars(chars, density_flip)
+		bandw = False
+		if option == 'bandw' or option == 'filled-bandw' or option == '2char-bandw' or option == 'full-filled-bandw':
+			bandw = True	
+			img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+		ascii_chars_list = [] 
+		os.system('')
+		for i in range(height):
+			for j in range(width):
+				if bandw:
+					b, g, r = img[i][j], img[i][j], img[i][j]
 				else:
-					a.write(_all[i]) """
+					b, g, r = img[i, j] # bgr
+				color = (int(r), int(g), int(b))
+				density = pixel_density(color)
+				char =  getChar(density, charArray, interval) * 2
+				ascii_chars_list.append(char)
+
+		if action == 'return':
+			return ascii_chars_list
+		else:
+			if self.name is None:
+				name_out = 'ascii_out' + str(random.randint(0, 1000))
+			else:
+				name_out = self.name + '_ascii'
+			output = get_path_out(self.pathIn, output)
+			with open(f'{output+name_out}.txt', 'a+') as a:
+				for i in range(len(ascii_chars_list) // new_width):
+					a.write((str('').join(ascii_chars_list[new_width*(i-1):new_width*(i)])) + '\n' )

@@ -3,9 +3,9 @@ import cv2
 import os
 import sys
 import time
-from image import AsciiImage,
+from image import AsciiImage
 from progress import Progress
-from to_ascii.utils import *
+from editor.utils import *
 
 class AsciiVideo:
 	""" 

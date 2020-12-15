@@ -1,7 +1,7 @@
 import argparse
 from image import AsciiImage
 from video import AsciiVideo
-from to_ascii.utils import *
+from editor.utils import *
 import sys
 
 """ Cli interface module """
@@ -52,17 +52,19 @@ def main():
 	output_as = a.output_as
 
 	if file_type == 'video':
-		v = VideoForAscii(a.file)
+		v = AsciiVideo(a.file)
 		if output_as == 'save':
 			v.ascii_video(output=a.output, option=a.option, font=a.font, save_as=a.save_as, scale=a.scale, density_flip=a.density_flip, character_space=a.character_space, chars=a.chars, font_scale=a.font_scale)
 		elif output_as == 'terminal':
 			v.ascii_terminal(option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, character_space=a.character_space, chars=a.chars, ratio_to=a.ratio_to)
 	elif file_type == 'image':
-		i = ImageForAscii(a.file)
+		i = AsciiImage(a.file)
 		if output_as == 'save':
 			i.ascii_img(action=a.action, output=a.output, option=a.option, font=a.font, save_as=a.save_as, scale=a.scale, density_flip=a.density_flip, character_space=a.character_space, chars=a.chars, font_scale=a.font_scale)
 		elif output_as == 'terminal':
 			i.ascii_terminal(option=a.option, action=a.action, scale=a.scale, terminal_size=a.terminal_size, density_flip=a.density_flip, chars=a.chars, ratio_to=a.ratio_to, terminal_spacing=a.terminal_spacing, clear=a.terminal_clear)
+		elif output_as == 'txt':
+			i.ascii_txt(output=a.output, option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, chars=a.chars, ratio_to=a.ratio_to, clear=a.terminal_clear)
 
 if __name__ == '__main__':
 	main()
