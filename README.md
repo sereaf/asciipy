@@ -95,7 +95,7 @@ img.ascii_video(output_as='save', charcter_space='avg',
 font='C:\Windows\Fonts\Segoepr.ttf', font_scale=0.5)
 ```
 
-| ![Output Image1]() | ![Output Image2]() |
+| ![Output Image1](https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png) | ![Output Image2]() |
 | ------------------ | ------------------ |
 
 ![Output Video]()
