@@ -57,6 +57,8 @@ def main():
 			v.ascii_video(output=a.output, option=a.option, font=a.font, save_as=a.save_as, scale=a.scale, density_flip=a.density_flip, character_space=a.character_space, chars=a.chars, font_scale=a.font_scale)
 		elif output_as == 'terminal':
 			v.ascii_terminal(option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, character_space=a.character_space, chars=a.chars, ratio_to=a.ratio_to)
+		elif output_as == 'txt':
+			v.ascii_txt(output=a.output, option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, chars=a.chars, clear=a.clear)
 	elif file_type == 'image':
 		i = AsciiImage(a.file)
 		if output_as == 'save':
@@ -64,7 +66,7 @@ def main():
 		elif output_as == 'terminal':
 			i.ascii_terminal(option=a.option, action=a.action, scale=a.scale, terminal_size=a.terminal_size, density_flip=a.density_flip, chars=a.chars, ratio_to=a.ratio_to, terminal_spacing=a.terminal_spacing, clear=a.clear)
 		elif output_as == 'txt':
-			i.ascii_txt(output=a.output, option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, chars=a.chars, ratio_to=a.ratio_to, clear=a.clear)
+			i.ascii_txt(output=a.output, option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, chars=a.chars, clear=a.clear)
 
 if __name__ == '__main__':
 	main()

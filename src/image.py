@@ -174,7 +174,7 @@ class AsciiImage:
 			pass
 
 	@timeit
-	def ascii_txt(self, output='', option='bandw', action='save', scale='fit', density_flip=False, chars=None, ratio_to='width', character_space='', clear=False):
+	def ascii_txt(self, output='', option='bandw', action='save', scale='fit', density_flip=False, chars=None, character_space='', clear=False):
 		self.load()
 		size = self.get_shape()
 
@@ -218,6 +218,10 @@ class AsciiImage:
 			else:
 				name_out = self.name + '_ascii'
 			output = get_path_out(self.pathIn, output)
-			with open(f'{output+name_out}.txt', 'a+') as a:
+			if clear:
+				write_as = 'w+'
+			else:
+				write_as = 'a+'
+			with open(f'{output+name_out}.txt', write_as) as a:
 				for i in range(len(ascii_chars_list) // new_width):
 					a.write((str('').join(ascii_chars_list[new_width*(i-1):new_width*(i)])) + '\n' )
