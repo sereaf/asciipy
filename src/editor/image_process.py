@@ -19,23 +19,13 @@ def save_img(output, to, img, img_out, pillow=False):
 	else:
 		ext = '.jpg'
 
-	if os.path.exists(img):
+	if os.path.exists(img) and to == False:
 		path = img
-		name = os.path.basename(path)
-		name , ext = os.path.splitext(name)
-		if to:
-			new_name = name + '_ascii' + to
-		else:
-			new_name = name + '_ascii' + ext
-	else:
-		new_name = 'ascii_' + str(random.randint(1000, 10000)) + ext
+		ext = os.path.splitext(name)[1]
 	try:
-		#if pillow:
-		#	img_out.save(os.path.join(output, new_name))
-		#else:	
-		cv2.imwrite(os.path.join(output, new_name), img_out)
+		cv2.imwrite(output + ext, img_out)
 	except:
-		raise ValueError('Can\'t save image - %s' % (new_name))
+		raise ValueError('Can\'t save image - %s' % (output + ext))
 
 def getChars(chars, density_flip=False):
 	""" 

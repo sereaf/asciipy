@@ -31,13 +31,13 @@ class AsciiVideo:
 
 	@timeit
 	def ascii_video(self, output='', audio=False, option='colored', font=2, save_as='', scale='fit', density_flip=False, character_space='', chars=None, font_scale=1):
-		"Create ascii image"
+		"Create and save ascii video"
 		output = get_path_out(self.pathIn, output)
 		b_name = os.path.basename(self.pathIn)
-		name = (os.path.splitext(b_name)[0] + '_ascii' + os.path.splitext(b_name)[1])
+		#name = (os.path.splitext(b_name)[0] + '_ascii' + os.path.splitext(b_name)[1])
 		p = Progress(self.video_length, 'frames', 'Processing')
 		fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-		videoOut = cv2.VideoWriter(os.path.join(output, name), fourcc, self.fps, self.size)
+		videoOut = cv2.VideoWriter(output+os.path.splitext(self.pathIn)[1], fourcc, self.fps, self.size)
 		total_frames = 0
 		while total_frames < self.video_length: #video.isOpened()
 			ret, frame = self.video.read()
@@ -51,7 +51,7 @@ class AsciiVideo:
 
 	@timeit
 	def ascii_terminal(self, option='colored', action='return', scale='fit', density_flip=False, chars=None, character_space='', clear=False, terminal_spacing=None, ratio_to='width'):
-		"Create and print ascii image to the terminal"
+		"Create and print ascii video to the terminal"
 		total_frames = 0
 		char_arr = []
 		if action == 'return':
@@ -96,6 +96,7 @@ class AsciiVideo:
 
 	@timeit
 	def ascii_txt(self, output=None, option='bandw', action='save', scale='fit', density_flip=False, chars=None, character_space='', clear=False):
+		"""Save ascii video into .txt file"""
 		total_frames = 0
 		char_arr = []
 		output = get_path_out(self.pathIn, output)

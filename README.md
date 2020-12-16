@@ -38,12 +38,11 @@ image.ascii_txt() # put it into a txt file
 video_path = 'C:\video_to_ascii\your_video.mp4'
 video = AsciiVideo(video_path)
 video.ascii_video() # save or return an ascii video
-video.ascii_terminal() #print an ascii video to the terminal
+video.ascii_terminal() # print an ascii video to the terminal
+video.ascii_txt() # put frames into a txt file
 
 # input image can already be loaded
 # by opencv or pillow, just pass that as an argument
-
-# see all arguments bellow
 ```
 
 #### Cli
@@ -90,15 +89,16 @@ img.ascii_txt(density_flip=False)
 ```
 
 ```python
-img = AsciiVideo('test.mp4')
+img = AsciiVideo('example_video.mp4')
 img.ascii_video(output_as='save', charcter_space='avg',
 font='C:\Windows\Fonts\Segoepr.ttf', font_scale=0.5)
 ```
 
-<!--![Output Image1](https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png)-->
+| <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png" alt="AciiImage Example One" width="480" height="270"> | <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_txt.png" alt="AciiImage Example Two" width="480" height="270"> |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 
-| <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png" alt="First Output" width="480" height="270"> | <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_txt.png" alt="Second Output" width="480" height="270"> |
-| --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+<!-- https://github.com/sereaf/asciipy/blob/master -->
 
-<img src="https://github.com/sereaf/asciipy/blob/master/images/python_logo_img_bandw.jpg" alt="Img Example" width="960" height="540">
-<img src="https://github.com/sereaf/asciipy/blob/master/images/python_logo_img.jpg" alt="Img Example" width="960" height="540">
+![AsciiVideo Example](./images/example_video.mp4)
+
+<img src="./images/python_logo_img.jpg" alt="Img Example" width="960" height="540">
