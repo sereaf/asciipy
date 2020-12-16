@@ -37,7 +37,7 @@ def main():
 	parser.add_argument('-as', '--save-as', type=str.lower, help='DEFAULT:\'\'(input extension) DESC: Format of the output image or video (png / jpg or mp4 / avi)',  action='store')
 	parser.add_argument('-s', '--scale', type=str.lower, help='DEFAULT:\'fit\' DESC: How many of the pixels should be turned to ascii (ex:. -s=0.55 = 55 precent of the pixels will be asciifyed)', default='fit')
 	parser.add_argument('-df', '--density-flip', type=bool, help='DEFAULT:False DESC: If set to True the ascii characters chosen at dark pixels will be the least dense ones and at light pixels the denser characters.', default=False, action='store')
-	parser.add_argument('-cs', '--character-space', type=str.lower, choices=['avg', 'sm', 'bg'], help='DEFAULT:\'\'(# - size) DESC: In font files some characters have different size. Get avg - average ; sm - smallest ; bg - biggest from fonts and use that spacing when putting it onto an image.', default='', action='store')
+	parser.add_argument('-cs', '--character-space', type=str.lower, help='DEFAULT:\'\'(# - size) DESC: In font files some characters have different size. Get avg - average ; sm - smallest ; bg - biggest from fonts and use that spacing when putting it onto an image.', default='', action='store') # choices=['avg', 'sm', 'bg']
 	parser.add_argument('-fs', '--font-scale', type=float, help='DEFAULT:\'1\'(default font size) DESC: Scale the font compared to the original size of it', default=1, action='store')
 	parser.add_argument('-ts', '--terminal-size', nargs='+', type=int, help='DEFAULT:current terminal size or (53, 30)  DESC: ', default=None, action='store')
 	parser.add_argument('-rt', '--ratio-to', type=str.lower, choices=['pass', 'width', 'height'], help='DEFAULT: width DESC: auto scale the width to the height of the input image in terminal or vice versa or pass - (no auto scaling)', default='width', action='store')
@@ -58,7 +58,7 @@ def main():
 		elif output_as == 'terminal':
 			v.ascii_terminal(option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, character_space=a.character_space, chars=a.chars, ratio_to=a.ratio_to)
 		elif output_as == 'txt':
-			v.ascii_txt(output=a.output, option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, chars=a.chars, clear=a.clear)
+			v.ascii_txt(output=a.output, option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, chars=a.chars, clear=a.clear, character_space=a.character_space)
 	elif file_type == 'image':
 		i = AsciiImage(a.file)
 		if output_as == 'save':
@@ -66,7 +66,7 @@ def main():
 		elif output_as == 'terminal':
 			i.ascii_terminal(option=a.option, action=a.action, scale=a.scale, terminal_size=a.terminal_size, density_flip=a.density_flip, chars=a.chars, ratio_to=a.ratio_to, terminal_spacing=a.terminal_spacing, clear=a.clear)
 		elif output_as == 'txt':
-			i.ascii_txt(output=a.output, option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, chars=a.chars, clear=a.clear)
+			i.ascii_txt(output=a.output, option=a.option, action=a.action, scale=a.scale, density_flip=a.density_flip, chars=a.chars, clear=a.clear, character_space=a.character_space)
 
 if __name__ == '__main__':
 	main()

@@ -173,7 +173,7 @@ class AsciiImage:
 		else:
 			pass
 
-	@timeit
+	
 	def ascii_txt(self, output='', option='bandw', action='save', scale='fit', density_flip=False, chars=None, character_space='', clear=False):
 		self.load()
 		size = self.get_shape()
@@ -209,19 +209,17 @@ class AsciiImage:
 				density = pixel_density(color)
 				char =  getChar(density, charArray, interval) * 2
 				ascii_chars_list.append(char)
-
 		if action == 'return':
 			return ascii_chars_list
 		else:
-			if self.name is None:
-				name_out = 'ascii_out' + str(random.randint(0, 1000))
-			else:
-				name_out = self.name + '_ascii'
 			output = get_path_out(self.pathIn, output)
 			if clear:
 				write_as = 'w+'
 			else:
 				write_as = 'a+'
-			with open(f'{output+name_out}.txt', write_as) as a:
+			output = output + '.' + 'txt'
+			with open(output, write_as) as a:
 				for i in range(len(ascii_chars_list) // new_width):
-					a.write((str('').join(ascii_chars_list[new_width*(i-1):new_width*(i)])) + '\n' )
+					a.write((str(character_space).join(ascii_chars_list[new_width*(i-1):new_width*(i)])) + '\n' )
+			
+			print(f'Saved .txt at {output}')

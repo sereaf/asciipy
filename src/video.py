@@ -95,12 +95,13 @@ class AsciiVideo:
 		self.stop()
 
 	@timeit
-	def ascii_txt(self, output='', option='bandw', action='save', scale='fit', density_flip=False, chars=None, character_space='', clear=False):
+	def ascii_txt(self, output=None, option='bandw', action='save', scale='fit', density_flip=False, chars=None, character_space='', clear=False):
 		total_frames = 0
 		char_arr = []
+		output = get_path_out(self.pathIn, output)
 		while total_frames < self.video_length:
 			ret, frame = self.video.read()
 			total_frames += 1
 			i = AsciiImage(frame)
-			i.ascii_txt(option=option, action=action, scale=scale, density_flip=density_flip, character_space=character_space, chars=chars, clear=clear)
+			i.ascii_txt(output=output, option=option, action=action, scale=scale, density_flip=density_flip, character_space=character_space, chars=chars, clear=clear)
 		self.stop()

@@ -12,15 +12,14 @@ def get_path_out(path_in, path_out):
 	"""
 	Get the right path for the output file
 	"""
-	if path_out == '':  #or os.path.exists(str(path_out)):
+	if path_out is None or path_out == '':  #or os.path.exists(str(path_out)):
 		if os.path.exists(str(path_in)):
-			print(path_in)
-			output = os.path.dirname(path_in)
+			#output = os.path.join(os.path.dirname(path_in), os.path.splitext(os.path.basename(path_in))[0])
+			output = os.path.splitext(path_in)[0] + '_ascii'
 		else:
 			output = [ chr(x) + ":" for x in range(65,91) if os.path.exists(chr(x) + ":") ][0]
 	else:
 		return path_out
-
 	return output
 
 def timeit(func):
