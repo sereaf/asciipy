@@ -14,6 +14,7 @@ def get_path_out(path_in, path_out):
 	"""
 	if path_out == '':  #or os.path.exists(str(path_out)):
 		if os.path.exists(str(path_in)):
+			print(path_in)
 			output = os.path.dirname(path_in)
 		else:
 			output = [ chr(x) + ":" for x in range(65,91) if os.path.exists(chr(x) + ":") ][0]

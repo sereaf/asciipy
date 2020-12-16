@@ -94,13 +94,13 @@ class AsciiVideo:
 			print(f'{self.name} at {self.video_length // render_time} fps - print time {round(render_time)} seconds (original - fps {self.fps} - length {self.video_length // self.fps} seconds)')
 		self.stop()
 
-		@timeit
-		def ascii_txt(self, output='', option='bandw', action='save', scale='fit', density_flip=False, chars=None, character_space='', clear=False):
-			total_frames = 0
-			char_arr = []
-			while total_frames < self.video_length:
-				ret, frame = self.video.read()
-				total_frames += 1
-				i = AsciiImage(frame)
-				i.ascii_txt(option=option, action=action, scale=scale, density_flip=density_flip, character_space=character_space, chars=chars, clear=clear)
-			self.stop()
+	@timeit
+	def ascii_txt(self, output='', option='bandw', action='save', scale='fit', density_flip=False, chars=None, character_space='', clear=False):
+		total_frames = 0
+		char_arr = []
+		while total_frames < self.video_length:
+			ret, frame = self.video.read()
+			total_frames += 1
+			i = AsciiImage(frame)
+			i.ascii_txt(option=option, action=action, scale=scale, density_flip=density_flip, character_space=character_space, chars=chars, clear=clear)
+		self.stop()
