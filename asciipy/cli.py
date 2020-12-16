@@ -1,7 +1,7 @@
 import argparse
-from image import AsciiImage
-from video import AsciiVideo
-from editor.utils import *
+from .image import AsciiImage
+from .video import AsciiVideo
+from .editor.utils import *
 import sys
 
 """ Cli interface module """

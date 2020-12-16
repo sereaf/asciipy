@@ -4,9 +4,9 @@ import cv2
 import sys
 from PIL import ImageOps, Image
 import numpy as np
-from editor.font import InputFont
-from editor.utils import *
-from editor.image_process import *
+from .editor.font import InputFont
+from .editor.utils import *
+from .editor.image_process import *
 
 class AsciiImage:
 	def __init__(self, imgIn):

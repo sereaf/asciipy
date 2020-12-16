@@ -6,13 +6,13 @@ _Convert images and videos to ascii art and you can print them to the terminal o
 
 ---
 
-<!--## Install
+## Install
 
 ```bash
 pip install asciipy
-```-->
+```
 
-<!-- [see here on pypi.org]() -->
+[On pypi.org](https://pypi.org/project/asciipy)
 
 ## Requirements
 
@@ -35,7 +35,7 @@ image.ascii_terminal() # print an ascii image to the terminal
 image.ascii_txt() # put it into a txt file
 
 #video
-video_path = 'C:\video_to_ascii\your_video.mp4'
+video_path = 'C:\\video_to_ascii\your_video.mp4'
 video = AsciiVideo(video_path)
 video.ascii_video() # save or return an ascii video
 video.ascii_terminal() # print an ascii video to the terminal
@@ -97,8 +97,6 @@ font='C:\Windows\Fonts\Segoepr.ttf', font_scale=0.5)
 | <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_terminal_bandw.png" alt="AciiImage Example One" width="480" height="270"> | <img src="https://github.com/sereaf/asciipy/blob/master/images/asciipy_txt.png" alt="AciiImage Example Two" width="480" height="270"> |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 
-<!-- https://github.com/sereaf/asciipy/blob/master -->
+![AsciiVideo Example](https://github.com/sereaf/asciipy/blob/master/images/example_video.mp4)
 
-![AsciiVideo Example](./images/example_video.mp4)
-
-<img src="./images/python_logo_img.jpg" alt="Img Example" width="960" height="540">
+<img src="https://github.com/sereaf/asciipy/blob/master/images/python_logo_img.jpg" alt="Img Example" width="960" height="540">

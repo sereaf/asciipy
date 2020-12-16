@@ -11,3 +11,5 @@ dist
 asciipy.egg-info
 build/
 test.py
+Pipfile
+Pipfile.lock
