@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
 	name='asciipy',
-	version='0.0.3',
+	version='0.0.4',
 	description='This package lets you turn images and videos to ascii art and print it to terminal or save it in a supported format on your computer.',
 	author='Sereaf',
 	author_email='asciipycontact@gmail.com',
@@ -24,7 +24,7 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.7',
-	keywords='ascii video image opencv',
+	keywords='ascii video image opencv pillow terminal text',
 	entry_points={
         "console_scripts": [
             'asciipy=asciipy.cli:main'
