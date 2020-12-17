@@ -17,7 +17,7 @@ pip install asciipy
 ## Requirements
 
 -   `opencv-python`
--   `pillow`
+-   `Pillow`
 -   `numpy`
 
 ## Usage
@@ -89,8 +89,8 @@ img.ascii_txt(density_flip=False)
 ```
 
 ```python
-img = AsciiVideo('example_video.mp4')
-img.ascii_video(output_as='save', charcter_space='avg',
+video = AsciiVideo('example_video.mp4')
+video.ascii_video(output_as='save', charcter_space='avg',
 font='C:\Windows\Fonts\Segoepr.ttf', font_scale=0.5)
 ```
 

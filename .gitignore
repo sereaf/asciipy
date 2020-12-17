@@ -13,3 +13,4 @@ build/
 test.py
 Pipfile
 Pipfile.lock
+tox.ini
