@@ -105,6 +105,8 @@ def create_ascii_img(size, img, img_out, char, font, option, font_scale=1, pillo
 	Converts from pillow to opencv or from opencv to pillow image if needed
 	"""
 	bandw = False
+	if pillow and (len(img.getbands()) > 3): # rgba to rgb - pillow can't handle that on its own, opencv seems to do it though
+		img = img.convert('RGB')
 	if option == 'bandw' or option == 'filled-bandw' or option == '2char-bandw' or option == 'full-filled-bandw':
 		bandw = True
 		if pillow:
