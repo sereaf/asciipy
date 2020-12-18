@@ -17,6 +17,9 @@ setup(
         'Pillow',
         'numpy'
     ],
+    extras_require = {
+        'audio': ['ffmpeg-python']
+    },
 	classifiers=[
         "Programming Language :: Python :: 3",
         "Intended Audience :: Developers",

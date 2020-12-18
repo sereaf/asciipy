@@ -37,7 +37,8 @@ class AsciiVideo:
 		#name = (os.path.splitext(b_name)[0] + '_ascii' + os.path.splitext(b_name)[1])
 		p = Progress(self.video_length, 'frames', 'Processing')
 		fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-		videoOut = cv2.VideoWriter(output+os.path.splitext(self.pathIn)[1], fourcc, self.fps, self.size)
+		new_video = output+'temp'+os.path.splitext(self.pathIn)[1]
+		videoOut = cv2.VideoWriter(new_video, fourcc, self.fps, self.size)
 		total_frames = 0
 		while total_frames < self.video_length: #video.isOpened()
 			ret, frame = self.video.read()
@@ -48,6 +49,28 @@ class AsciiVideo:
 			videoOut.write(img)
 		self.stop()
 		videoOut.release()
+		if audio:
+			import ffmpeg
+			import tempfile
+			
+			temp_dir = tempfile.gettempdir()
+			temp_file_path = os.path.join(temp_dir, "asciipy_audio.wav")
+
+			input_video = ffmpeg.input(self.pathIn)
+
+			final = output+os.path.splitext(self.pathIn)[1]
+
+			stream = (
+				ffmpeg
+				.input(self.pathIn)
+				.output(temp_file_path)
+				.overwrite_output()
+				.run()
+			)
+
+			audio_file = ffmpeg.input(temp_file_path)
+			new_v = ffmpeg.input(new_video)
+			ffmpeg.concat(new_v, audio_file, v=1, a=1).output(final).overwrite_output().run()
 
 	@timeit
 	def ascii_terminal(self, option='colored', action='return', scale='fit', density_flip=False, chars=None, character_space='', clear=False, terminal_spacing=None, ratio_to='width'):

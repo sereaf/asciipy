@@ -12,6 +12,14 @@ _Convert images and videos to ascii art and you can print them to the terminal o
 pip install asciipy
 ```
 
+**Audio support**
+
+_install with `[audio]`_
+
+```bash
+pip install asciipy[audio]
+```
+
 [On pypi.org](https://pypi.org/project/asciipy)
 
 ## Requirements
