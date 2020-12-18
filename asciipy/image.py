@@ -145,7 +145,7 @@ class AsciiImage:
 		img, width, height = self.resize(new_size)
 		charArray, charLength, interval = getChars(chars, density_flip)
 		bandw = False
-		if pillow and (len(img.getbands()) > 3):
+		if (len(img.getbands()) > 3):
 			img = img.convert('RGB')
 		if option == 'bandw' or option == 'filled-bandw' or option == '2char-bandw' or option == 'full-filled-bandw':
 			bandw = True	
@@ -196,7 +196,7 @@ class AsciiImage:
 		img, width, height = self.resize(new_size)
 		charArray, charLength, interval = getChars(chars, density_flip)
 		bandw = False
-		if pillow and (len(img.getbands()) > 3):
+		if (len(img.getbands()) > 3):
 			img = img.convert('RGB')
 		if option == 'bandw' or option == 'filled-bandw' or option == '2char-bandw' or option == 'full-filled-bandw':
 			bandw = True	
