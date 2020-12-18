@@ -14,3 +14,5 @@ test.py
 Pipfile
 Pipfile.lock
 tox.ini
+reqlib-metadata
+pyproject.toml
