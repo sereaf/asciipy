@@ -71,7 +71,7 @@ asciipy -f C:\image_to_ascii\your_image.png
 | -oa / --output-as          | Output to - terminal, save, text (only cli)                     | `str`                                    |
 | -op / --option             | Option to use when converting                                   | `str`                                    |
 | -ch / --chars              | Characterset                                                    | `str`                                    |
-| -au / --audio              | With audio (Not yet)                                            | `bool`                                   |
+| -au / --audio              | With audio (if downloaded with ffmpeg)                          | `bool`                                   |
 | -fo / --font               | Font file                                                       | `str`                                    |
 | -as / --save-as            | Save with given extension                                       | `str`                                    |
 | -s / --scale               | Scale compared to deafult img/video size                        | `float`                                  |
