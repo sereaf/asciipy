@@ -29,9 +29,13 @@ class AsciiVideo:
 	def stop(self):
 		self.video.release()
 
+	def cap(self):
+		return cv2.VideoCapture(str(self.pathIn))
+
 	@timeit
 	def ascii_video(self, output='', audio=False, option='colored', font=2, save_as='', scale='fit', density_flip=False, character_space='', chars=None, font_scale=1):
 		"Create and save ascii video"
+		video = self.cap()
 		output = get_path_out(self.pathIn, output)
 		b_name = os.path.basename(self.pathIn)
 		p = Progress(self.video_length, 'frames', 'Processing')
@@ -40,7 +44,7 @@ class AsciiVideo:
 		videoOut = cv2.VideoWriter(new_video, fourcc, self.fps, self.size)
 		total_frames = 0
 		while total_frames < self.video_length: #video.isOpened()
-			ret, frame = self.video.read()
+			ret, frame = video.read()
 			total_frames += 1
 			p.build()
 			i = AsciiImage(frame)
@@ -76,12 +80,13 @@ class AsciiVideo:
 	@timeit
 	def ascii_terminal(self, option='colored', action='return', scale='fit', density_flip=False, chars=None, character_space='', clear=False, terminal_spacing=None, ratio_to='width'):
 		"Create and print ascii video to the terminal"
+		video = self.cap()
 		total_frames = 0
 		char_arr = []
 		if action == 'return':
 			p = Progress(self.video_length, 'frames', 'Processing')
 		while total_frames < self.video_length:
-			ret, frame = self.video.read()
+			ret, frame = video.read()
 			total_frames += 1
 			i = AsciiImage(frame)
 			if total_frames < self.video_length:
@@ -121,12 +126,14 @@ class AsciiVideo:
 	@timeit
 	def ascii_txt(self, output=None, option='bandw', action='save', scale='fit', density_flip=False, chars=None, character_space='', clear=False):
 		"""Save ascii video by frames into a .txt file"""
+		video = self.cap()
 		total_frames = 0
 		char_arr = []
 		output = get_path_out(self.pathIn, output)
 		while total_frames < self.video_length:
-			ret, frame = self.video.read()
+			ret, frame = video.read()
 			total_frames += 1
 			i = AsciiImage(frame)
 			i.ascii_txt(output=output, option=option, action=action, scale=scale, density_flip=density_flip, character_space=character_space, chars=chars, clear=clear)
 		self.stop()
+
