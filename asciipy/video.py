@@ -72,6 +72,8 @@ class AsciiVideo:
 			new_v = ffmpeg.input(new_video)
 			ffmpeg.concat(new_v, audio_file, v=1, a=1).output(final).overwrite_output().run()
 
+			os.remove(new_video)
+
 	@timeit
 	def ascii_terminal(self, option='colored', action='return', scale='fit', density_flip=False, chars=None, character_space='', clear=False, terminal_spacing=None, ratio_to='width'):
 		"Create and print ascii video to the terminal"
