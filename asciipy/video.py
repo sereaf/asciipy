@@ -34,7 +34,6 @@ class AsciiVideo:
 		"Create and save ascii video"
 		output = get_path_out(self.pathIn, output)
 		b_name = os.path.basename(self.pathIn)
-		#name = (os.path.splitext(b_name)[0] + '_ascii' + os.path.splitext(b_name)[1])
 		p = Progress(self.video_length, 'frames', 'Processing')
 		fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 		new_video = output+'temp'+os.path.splitext(self.pathIn)[1]
@@ -121,7 +120,7 @@ class AsciiVideo:
 
 	@timeit
 	def ascii_txt(self, output=None, option='bandw', action='save', scale='fit', density_flip=False, chars=None, character_space='', clear=False):
-		"""Save ascii video into .txt file"""
+		"""Save ascii video by frames into a .txt file"""
 		total_frames = 0
 		char_arr = []
 		output = get_path_out(self.pathIn, output)

@@ -27,7 +27,7 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.7',
-	keywords='ascii video image opencv',
+	keywords='ascii video image opencv pillow terminal text',
 	entry_points={
         "console_scripts": [
             'asciipy=asciipy.cli:main'

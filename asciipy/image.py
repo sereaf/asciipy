@@ -44,7 +44,7 @@ class AsciiImage:
 		if pillow:
 			return self.image.size
 		else:
-			# reversed - cv2 returns (height, width)
+			# reversed - cv2 returns (height, width) + remove channels
 			return self.image.shape[:2][::-1]
 
 	def resize(self, size, pillow=False):
