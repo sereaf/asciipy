@@ -174,7 +174,7 @@ class AsciiImage:
 			pass
 
 	
-	def ascii_txt(self, output='', option='bandw', action='save', scale='fit', density_flip=False, chars=None, character_space='', clear=False):
+	def ascii_txt(self, output='', option='colored', action='save', scale='fit', density_flip=False, chars=None, character_space='', clear=False):
 		self.load()
 		size = self.get_shape()
 
@@ -193,18 +193,11 @@ class AsciiImage:
 		new_size = new_width, new_height
 		img, width, height = self.resize(new_size)
 		charArray, charLength, interval = getChars(chars, density_flip)
-		bandw = False
-		if option == 'bandw' or option == 'filled-bandw' or option == '2char-bandw' or option == 'full-filled-bandw':
-			bandw = True	
-			img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 		ascii_chars_list = [] 
 		os.system('')
 		for i in range(height):
 			for j in range(width):
-				if bandw:
-					b, g, r = img[i][j], img[i][j], img[i][j]
-				else:
-					b, g, r = img[i, j] # bgr
+				b, g, r = img[i, j] # bgr
 				color = (int(r), int(g), int(b))
 				density = pixel_density(color)
 				char =  getChar(density, charArray, interval) * 2

@@ -39,8 +39,15 @@ class AsciiVideo:
 		output = get_path_out(self.pathIn, output)
 		b_name = os.path.basename(self.pathIn)
 		p = Progress(self.video_length, 'frames', 'Processing')
-		fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-		new_video = output+'temp'+os.path.splitext(self.pathIn)[1]
+		if save_as is None or save_as == '':
+			save_as = 'mp4v'
+		fourcc = cv2.VideoWriter_fourcc(*str(save_as))
+		if audio:
+			import tempfile
+			temp_dir = tempfile.gettempdir()
+			new_video = os.path.join(temp_dir, 'asciipy_video')+os.path.splitext(self.pathIn)[1]
+		else:
+			new_video = output+os.path.splitext(self.pathIn)[1]
 		videoOut = cv2.VideoWriter(new_video, fourcc, self.fps, self.size)
 		total_frames = 0
 		while total_frames < self.video_length: #video.isOpened()
@@ -54,11 +61,7 @@ class AsciiVideo:
 		videoOut.release()
 		if audio:
 			import ffmpeg
-			import tempfile
-			
-			temp_dir = tempfile.gettempdir()
-			temp_file_path = os.path.join(temp_dir, "asciipy_audio.wav")
-
+			temp_file_audio = os.path.join(temp_dir, "asciipy_audio.wav")
 			input_video = ffmpeg.input(self.pathIn)
 
 			final = output+os.path.splitext(self.pathIn)[1]
@@ -66,16 +69,17 @@ class AsciiVideo:
 			stream = (
 				ffmpeg
 				.input(self.pathIn)
-				.output(temp_file_path)
+				.output(temp_file_audio)
 				.overwrite_output()
 				.run()
 			)
 
-			audio_file = ffmpeg.input(temp_file_path)
+			audio_file = ffmpeg.input(temp_file_audio)
 			new_v = ffmpeg.input(new_video)
 			ffmpeg.concat(new_v, audio_file, v=1, a=1).output(final).overwrite_output().run()
 
 			os.remove(new_video)
+			os.remove(temp_file_audio)
 
 	@timeit
 	def ascii_terminal(self, option='colored', action='return', scale='fit', density_flip=False, chars=None, character_space='', clear=False, terminal_spacing=None, ratio_to='width'):
